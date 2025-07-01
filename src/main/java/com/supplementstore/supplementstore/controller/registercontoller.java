@@ -14,13 +14,13 @@ public class registercontoller {
 	public String Showreg() {
 		return "register";
 	}
-	@PostMapping("//dashboard")
+	@PostMapping("/authuser")
 	public String authuser(@ModelAttribute Users user) {
 		return "login";
 		
 	}
 	
-	@PostMapping("/regsuccess")
+	@PostMapping("/dashboard")
 	public String authusers(@ModelAttribute Users user) {
 	    return "dashboard"; 
 	}
