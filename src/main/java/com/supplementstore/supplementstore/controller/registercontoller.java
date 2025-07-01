@@ -14,7 +14,7 @@ public class registercontoller {
 	public String Showreg() {
 		return "register";
 	}
-	@PostMapping("/authuser")
+	@PostMapping("//dashboard")
 	public String authuser(@ModelAttribute Users user) {
 		return "login";
 		
