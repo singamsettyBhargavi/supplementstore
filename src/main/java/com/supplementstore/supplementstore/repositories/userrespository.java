@@ -12,8 +12,9 @@ import com.supplementstore.supplementstore.entites.Users;
 @Repository
 public interface userrespository extends JpaRepository<Users,Long> {
 
-    List<Users> findByemail(String email);
-	List<Users> findByemailAndPassword(String email, String password);
+    List<Users> findByusername(String username);
+    List<Users> findByUsernameAndPassword(String username, String password);
+
 
 
    

@@ -7,9 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="dashboard" method="post">
+<form action="/authUserByData" method="post">
 Username: <input type="text" name="username"> <br>
-Password: <input type = "text" name="password"> <br>
+Password: <input type = "password" name="password"> <br>
 
  <input type="submit" value="Submit"/>
 </form>
