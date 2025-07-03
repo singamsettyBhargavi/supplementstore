@@ -21,7 +21,7 @@ public class registercontoller {
 	}
 	
 	@PostMapping("/dashboard")
-	public String authusers(@ModelAttribute Users user) {
+	public String authusersdash(@ModelAttribute Users user) {
 	    return "dashboard"; 
 	}
 	

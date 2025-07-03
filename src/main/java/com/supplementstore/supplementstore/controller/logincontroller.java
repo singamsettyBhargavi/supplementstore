@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.supplementstore.supplementstore.entites.Users;
-import com.supplementstore.supplementstore.service.dashboardservice;
 import com.supplementstore.supplementstore.service.loginservice;
+import com.supplementstore.supplementstore.service.productservice;
 
 
 @Controller
@@ -20,7 +20,7 @@ public class logincontroller {
 	public loginservice logservice;
 	
 	@Autowired
-	public  dashboardservice dashservice;
+	public  productservice dashservice;
 
 	@RequestMapping("/login")
 	public String showlog(){

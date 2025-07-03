@@ -1,5 +1,7 @@
 package com.supplementstore.supplementstore.entites;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +29,15 @@ private String firstname;
 private String username;
 @Column(name= "password")
 private String password;
+@Column(name = "role")
+@ColumnDefault("'customer'")
+private String role;
+public String getRole() {
+	return role;
+}
+public void setRole(String role) {
+	this.role = role;
+}
 public String getUsername() {
 	return username;
 }
