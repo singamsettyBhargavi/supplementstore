@@ -1,15 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<h2>Welcome, ${firstname}</h2>
-
+<h2>Welcome</h2>
 
 <table border="1">
   <tr>
@@ -21,16 +12,17 @@
     <th>Quantity</th>
   </tr>
 
-  <tr>
-    <td>${product.id}</td>
-    <td>${product.proname}</td>
-    <td>${product.proprice}</td>
-    <td>${product.prodetails}</td>
-    <td>${product.procategory}</td>
-    <td>${product.proquantity}</td>
-  </tr>
+  <c:if test="${not empty productList}">
+  <c:forEach var="product" items="${productList}">
+    <tr>
+      <td>${product.id}</td>
+      <td>${product.proname}</td>
+      <td>${product.proprice}</td>
+      <td>${product.prodetails}</td>
+      <td>${product.procategory}</td>
+      <td>${product.proquantity}</td>
+    </tr>
+  </c:forEach>
+</c:if>
+  
 </table>
-
- 
-</body>
-</html>
