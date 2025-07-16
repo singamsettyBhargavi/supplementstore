@@ -8,7 +8,8 @@
 </head>
 <body>
 
-welcome
+<h2>Welcome, ${firstname}</h2>
+
 
 <table border="1">
   <tr>

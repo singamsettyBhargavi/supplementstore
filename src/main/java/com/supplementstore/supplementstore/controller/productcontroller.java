@@ -1,38 +1,36 @@
 package com.supplementstore.supplementstore.controller;
 
-import java.util.List;
+import com.supplementstore.supplementstore.entites.Products;
+import com.supplementstore.supplementstore.service.productservice;
+
+import jakarta.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.supplementstore.supplementstore.entites.Products;
-import com.supplementstore.supplementstore.service.productservice;
+import java.util.List;
 
 @Controller
 public class productcontroller {
-	
-	@Autowired
-	public productservice proservice;
 
+    @Autowired
+    private productservice productService;
 
-	@GetMapping("/dashboard") 
-	public String showpro(Model m) {
-	    List<Products> productList = proservice.getAllItems();  
-	    if (!productList.isEmpty()) {
-	        Products firstProduct = productList.get(0);         
-	        m.addAttribute("product", firstProduct);     
-	        System.out.println("First Product Name: " + firstProduct.getProname());
+    @GetMapping("/dashboard")
+    public String showDashboard(Model model, HttpSession session) {
 
-	    }
+        // ✅ Fetch Firstname from session
+        String firstname = (String) session.getAttribute("firstname");
+        model.addAttribute("firstname", firstname);
 
-	    return "dashboard";  
-	}
+        // ✅ Fetch products from database
+        List<Products> productList = productService.getAllItems();
+        if (!productList.isEmpty()) {
+            model.addAttribute("product", productList.get(0));
+        }
 
-		
-		
-	}
-
-	
-
+        return "dashboard"; // shows dashboard.jsp
+    }
+}
