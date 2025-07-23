@@ -41,7 +41,6 @@ import org.springframework.web.bind.annotation.*;
 //
 
 @Controller
-@SessionAttributes("firstname") // recommended here too
 public class logincontroller {
 
     @Autowired
